@@ -1,7 +1,7 @@
 import 'package:agile_on/data/factory.dart';
 import 'package:agile_on/data/model/poker.dart';
 import 'package:agile_on/data/repo/repo.dart';
-import 'package:agile_on/widget/PokerCard.dart';
+import 'package:agile_on/widget/poker_card.dart';
 import 'package:flutter/material.dart';
 
 Repo _repo = Factory().create(FactoryType.ACM);

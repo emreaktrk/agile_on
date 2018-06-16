@@ -9,6 +9,7 @@ class PokerApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Flutter Demo',
       theme: new ThemeData(
+        fontFamily: "Rubik",
         primaryColor: Colors.black,
         primarySwatch: Colors.grey,
       ),
