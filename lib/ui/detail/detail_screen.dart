@@ -18,17 +18,19 @@ class DetailScreen extends StatefulWidget {
 class DetailState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
+    return Scaffold(
+      appBar: AppBar(
         backgroundColor: _poker.color,
         elevation: 0.0,
       ),
-      body: new Center(
-          child: new Text(_poker.score,
-              style: new TextStyle(
-                  color: Colors.white,
-                  fontSize: 320.0,
-                  fontWeight: FontWeight.bold))),
+      body: SafeArea(
+        child: Center(
+            child: Text(_poker.score,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 180.0,
+                    fontWeight: FontWeight.bold))),
+      ),
       backgroundColor: _poker.color,
     );
   }
@@ -37,13 +39,15 @@ class DetailState extends State<DetailScreen> {
   void initState() {
     super.initState();
 
-    ScreenTheme.updateNavigationBarColor(_poker.color, platform: Platform.Android);
+    ScreenTheme.updateNavigationBarColor(_poker.color,
+        platform: Platform.Android);
   }
 
   @override
   void dispose() {
     super.dispose();
 
-    ScreenTheme.updateNavigationBarColor(Colors.black, platform: Platform.Android);
+    ScreenTheme.updateNavigationBarColor(Colors.black,
+        platform: Platform.Android);
   }
 }

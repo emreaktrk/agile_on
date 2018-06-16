@@ -1,3 +1,4 @@
+import 'package:agile_on/data/repo/acm.dart';
 import 'package:agile_on/data/repo/repo.dart';
 import 'package:agile_on/data/repo/sequential.dart';
 
@@ -6,6 +7,8 @@ class Factory {
     switch (type) {
       case FactoryType.SEQUENTIAL:
         return new SequentialRepo();
+      case FactoryType.ACM:
+        return new AcmRepo();
       default:
         throw new Exception("Unknown repo type");
     }
@@ -14,4 +17,5 @@ class Factory {
 
 enum FactoryType {
   SEQUENTIAL,
+  ACM,
 }

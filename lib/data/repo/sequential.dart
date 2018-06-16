@@ -15,4 +15,9 @@ class SequentialRepo extends Repo {
     int position = index % Colors.accents.length;
     return Colors.accents.elementAt(position).shade700;
   }
+
+  @override
+  Grid grid() {
+    return Grid(2, 4);
+  }
 }

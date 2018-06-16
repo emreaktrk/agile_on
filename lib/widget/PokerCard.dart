@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class PokerCard extends StatelessWidget {
-  Poker _poker;
+  final Poker _poker;
 
   @override
   Widget build(BuildContext context) {
