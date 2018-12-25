@@ -39,15 +39,19 @@ class DetailState extends State<DetailScreen> {
   void initState() {
     super.initState();
 
-    ScreenTheme.updateNavigationBarColor(_poker.color,
-        platform: Platform.Android);
+    ScreenTheme.updateNavigationBarColor(
+      _poker.color,
+      platform: Platform.Android,
+    );
   }
 
   @override
   void dispose() {
     super.dispose();
 
-    ScreenTheme.updateNavigationBarColor(Colors.black,
-        platform: Platform.Android);
+    ScreenTheme.updateNavigationBarColor(
+      Colors.black,
+      platform: Platform.Android,
+    );
   }
 }

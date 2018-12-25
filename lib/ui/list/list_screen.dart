@@ -1,6 +1,7 @@
 import 'package:agile_on/data/factory.dart';
 import 'package:agile_on/data/model/poker.dart';
 import 'package:agile_on/data/repo/repo.dart';
+import 'package:agile_on/ui/detail/detail_screen.dart';
 import 'package:agile_on/widget/poker_card.dart';
 import 'package:flutter/material.dart';
 
@@ -19,10 +20,6 @@ class ListState extends State<ListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        elevation: 0.0,
-        title: Text('Agile On'),
-      ),
       body: SafeArea(
         child: new Padding(
           padding: const EdgeInsets.all(4.0),
@@ -36,7 +33,13 @@ class ListState extends State<ListScreen> {
                   children: List<Widget>.generate(_repo.grid().row, (column) {
                     return Flexible(
                       fit: FlexFit.tight,
-                      child: PokerCard.given(getCard(row, column)),
+                      child: PokerCard.given(getCard(row, column), () {
+                        Navigator.push(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) =>
+                                    new DetailScreen(getCard(row, column))));
+                      }),
                     );
                   }),
                 ),
