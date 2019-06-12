@@ -11,7 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _index = 1;
+  int _index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
         bottomNavigationBar: new BottomNavigationBar(
           currentIndex: _index,
           onTap: (index) => setState(() {
-                index = _index;
+                _index = index;
                 if (widget.onTabChange != null) {
                   widget.onTabChange(_index);
                 }

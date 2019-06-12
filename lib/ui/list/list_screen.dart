@@ -18,34 +18,27 @@ class ListScreen extends StatefulWidget {
 class ListState extends State<ListScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: SafeArea(
-        child: new Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: Flex(
-            direction: Axis.vertical,
-            children: List<Widget>.generate(_repo.grid().column, (row) {
-              return Flexible(
-                fit: FlexFit.tight,
-                child: Flex(
-                  direction: Axis.horizontal,
-                  children: List<Widget>.generate(_repo.grid().row, (column) {
-                    return Flexible(
-                      fit: FlexFit.tight,
-                      child: PokerCard.given(getCard(row, column), () {
-                        Navigator.push(
-                            context,
-                            new MaterialPageRoute(
-                                builder: (context) =>
-                                    new DetailScreen(getCard(row, column))));
-                      }),
-                    );
-                  }),
-                ),
-              );
-            }),
-          ),
+    return new Container(
+      child: new Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: Flex(
+          direction: Axis.vertical,
+          children: List<Widget>.generate(_repo.grid().column, (row) {
+            return Flexible(
+              fit: FlexFit.tight,
+              child: Flex(
+                direction: Axis.horizontal,
+                children: List<Widget>.generate(_repo.grid().row, (column) {
+                  return Flexible(
+                    fit: FlexFit.tight,
+                    child: PokerCard.given(getCard(row, column), () {
+                      Navigator.push(context, new MaterialPageRoute(builder: (context) => new DetailScreen(getCard(row, column))));
+                    }),
+                  );
+                }),
+              ),
+            );
+          }),
         ),
       ),
     );
