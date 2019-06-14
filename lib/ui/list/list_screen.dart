@@ -13,11 +13,17 @@ class ListScreen extends StatefulWidget {
   _ListScreenState createState() => _ListScreenState(repo);
 }
 
-class _ListScreenState extends State<ListScreen> with AutomaticKeepAliveClientMixin<ListScreen> {
+class _ListScreenState extends State<ListScreen> {
   List<Poker> _cards;
 
   _ListScreenState(Repo repo) {
     _cards = repo.values();
+  }
+
+  @override
+  void didUpdateWidget(ListScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _cards = widget.repo.values();
   }
 
   @override
@@ -51,7 +57,4 @@ class _ListScreenState extends State<ListScreen> with AutomaticKeepAliveClientMi
   Poker getCard(int row, int column) {
     return _cards[(row * 2) + column];
   }
-
-  @override
-  bool get wantKeepAlive => true;
 }

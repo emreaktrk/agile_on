@@ -29,9 +29,9 @@ class PokerApp extends StatelessWidget {
         home: SafeArea(
           child: HomeScreen(
             tabs: <Widget>[
-              ListScreen(key: new Key("1"), repo: Factory.create(FactoryType.ACM)),
-              ListScreen(key: new Key("2"), repo: Factory.create(FactoryType.SEQUENTIAL)),
-              ListScreen(key: new Key("3"), repo: Factory.create(FactoryType.SIZE)),
+              ListScreen(repo: Factory.create(FactoryType.ACM)),
+              ListScreen(repo: Factory.create(FactoryType.SEQUENTIAL)),
+              ListScreen(repo: Factory.create(FactoryType.SIZE)),
             ],
           ),
         ));
