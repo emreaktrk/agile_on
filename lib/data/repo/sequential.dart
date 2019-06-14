@@ -6,8 +6,8 @@ import 'repo.dart';
 class SequentialRepo extends Repo {
   @override
   List<Poker> values() {
-    return new List<Poker>.generate(8, (index) {
-      return new Poker(index.toString(), getColor(index));
+    return List<Poker>.generate(8, (index) {
+      return Poker(index.toString(), getColor(index));
     });
   }
 
