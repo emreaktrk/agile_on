@@ -7,18 +7,18 @@ class SizeRepo extends Repo {
   List<Poker> values() {
     return List<Poker>()
       ..add(
-        Poker("Small", Colors.green),
+        Poker("S", Colors.green),
       )
       ..add(
-        Poker("Medium", Colors.orange),
+        Poker("M", Colors.orange),
       )
       ..add(
-        Poker("Large", Colors.red),
+        Poker("L", Colors.red),
       );
   }
 
   @override
   Grid grid() {
-    return Grid(1, 3);
+    return Grid(3, 1);
   }
 }

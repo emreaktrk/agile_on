@@ -10,12 +10,12 @@ class PokerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _callback,
-      child: new Card(
+      child:  Card(
         color: _poker.color,
-        child: new Center(
-          child: new Text(
+        child:  Center(
+          child:  Text(
             _poker.score,
-            style: new TextStyle(
+            style:  TextStyle(
                 color: Colors.white,
                 fontSize: 36.0,
                 fontWeight: FontWeight.bold),

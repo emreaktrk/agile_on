@@ -5,7 +5,7 @@ import 'package:agile_on/data/repo/sequential.dart';
 import 'repo/size.dart';
 
 class Factory {
-  Repo create(FactoryType type) {
+  static Repo create(FactoryType type) {
     switch (type) {
       case FactoryType.SEQUENTIAL:
         return new SequentialRepo();

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+@immutable
 class HomeScreen extends StatefulWidget {
   final void Function(int index) onTabChange;
   final List<Widget> tabs;
@@ -15,9 +16,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
         body: widget.tabs[_index],
-        bottomNavigationBar: new BottomNavigationBar(
+        bottomNavigationBar: BottomNavigationBar(
           currentIndex: _index,
           onTap: (index) => setState(() {
                 _index = index;
@@ -26,13 +27,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
               }),
           items: [
-            new BottomNavigationBarItem(
-              icon: new Icon(Icons.credit_card),
-              title: new Text("ACM"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.credit_card),
+              title: Text("ACM"),
             ),
-            new BottomNavigationBarItem(
-              icon: new Icon(Icons.flip_to_front),
-              title: new Text("Sequence"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.flip_to_front),
+              title: Text("Sequence"),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.flip_to_front),
+              title: Text("Size"),
             ),
           ],
         ));

@@ -1,17 +1,16 @@
 import 'package:agile_on/data/model/poker.dart';
 import 'package:flutter/material.dart';
-import 'package:screentheme/screentheme.dart';
+import 'package:flutter/services.dart';
 
-Poker _poker;
-
+@immutable
 class DetailScreen extends StatefulWidget {
-  DetailScreen(Poker poker) {
-    _poker = poker;
-  }
+  final Poker poker;
+
+  DetailScreen(this.poker);
 
   @override
   State<StatefulWidget> createState() {
-    return new DetailState();
+    return DetailState();
   }
 }
 
@@ -20,18 +19,22 @@ class DetailState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: _poker.color,
+        backgroundColor: widget.poker.color,
         elevation: 0.0,
       ),
+      backgroundColor: widget.poker.color,
       body: SafeArea(
         child: Center(
-            child: Text(_poker.score,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 180.0,
-                    fontWeight: FontWeight.bold))),
+          child: Text(
+            widget.poker.score,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 180.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
-      backgroundColor: _poker.color,
     );
   }
 
@@ -39,9 +42,13 @@ class DetailState extends State<DetailScreen> {
   void initState() {
     super.initState();
 
-    ScreenTheme.updateNavigationBarColor(
-      _poker.color,
-      platform: Platform.Android,
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: widget.poker.color,
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarColor: widget.poker.color,
+        systemNavigationBarIconBrightness: Brightness.dark,
+      ),
     );
   }
 
@@ -49,9 +56,13 @@ class DetailState extends State<DetailScreen> {
   void dispose() {
     super.dispose();
 
-    ScreenTheme.updateNavigationBarColor(
-      Colors.black,
-      platform: Platform.Android,
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.white,
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarColor: Colors.white,
+        systemNavigationBarIconBrightness: Brightness.dark,
+      ),
     );
   }
 }
