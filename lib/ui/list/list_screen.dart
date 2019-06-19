@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class ListScreen extends StatefulWidget {
   final Repo repo;
 
-  ListScreen({this.repo}) : super(key: new Key(repo.toString()));
+  ListScreen({this.repo}) : super(key: Key(repo.toString()));
 
   @override
   _ListScreenState createState() => _ListScreenState(repo);
@@ -24,7 +24,7 @@ class _ListScreenState extends State<ListScreen> {
   Widget build(BuildContext context) {
     return Container(
       child: Padding(
-        padding: const EdgeInsets.all(4.0),
+        padding: const EdgeInsets.all(16.0),
         child: Flex(
           direction: Axis.vertical,
           children: List<Widget>.generate(widget.repo.grid().column, (row) {
@@ -37,9 +37,7 @@ class _ListScreenState extends State<ListScreen> {
                     fit: FlexFit.tight,
                     child: PokerCard(
                       poker: _getCard(row, column),
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(poker: _getCard(row, column))));
-                      },
+                      onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(poker: _getCard(row, column)))),
                     ),
                   );
                 }),

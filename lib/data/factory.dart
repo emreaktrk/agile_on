@@ -8,13 +8,13 @@ class Factory {
   static Repo create(FactoryType type) {
     switch (type) {
       case FactoryType.SEQUENTIAL:
-        return new SequentialRepo();
+        return SequentialRepo();
       case FactoryType.ACM:
-        return new AcmRepo();
+        return AcmRepo();
       case FactoryType.SIZE:
-        return new SizeRepo();
+        return SizeRepo();
       default:
-        throw new Exception("Unknown repo type");
+        throw Exception("Unknown repo type");
     }
   }
 }

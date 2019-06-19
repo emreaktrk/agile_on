@@ -12,13 +12,21 @@ class PokerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
-      child: RaisedButton(
-        onPressed: onPressed,
-        color: poker.color,
-        child: Center(
-          child: Text(
-            poker.score,
-            style: TextStyle(color: Colors.white, fontSize: 36.0, fontWeight: FontWeight.bold),
+      child: Padding(
+        padding: const EdgeInsets.all(6.0),
+        child: RaisedButton(
+          onPressed: onPressed,
+          color: poker.color,
+          child: Center(
+            child: Text(
+              poker.score,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24.0,
+                fontFamily: "Rubik",
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ),
       ),

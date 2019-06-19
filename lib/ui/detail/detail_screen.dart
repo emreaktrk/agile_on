@@ -30,6 +30,7 @@ class DetailState extends State<DetailScreen> {
             style: TextStyle(
               color: Colors.white,
               fontSize: 180.0,
+              fontFamily: "Rubik",
               fontWeight: FontWeight.bold,
             ),
           ),

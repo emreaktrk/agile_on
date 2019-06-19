@@ -15,7 +15,7 @@ void main() {
       statusBarIconBrightness: Brightness.dark,
       systemNavigationBarColor: Colors.white,
       systemNavigationBarIconBrightness: Brightness.dark,
-  ),
+    ),
   );
 
   runApp(PokerApp());

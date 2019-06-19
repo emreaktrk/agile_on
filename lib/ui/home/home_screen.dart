@@ -20,6 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
         body: widget.tabs[_index],
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
+          unselectedItemColor: Colors.black54,
+          selectedItemColor: Colors.black,
           currentIndex: _index,
           onTap: (index) => setState(() {
                 _index = index;
