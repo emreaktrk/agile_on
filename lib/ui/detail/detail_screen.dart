@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 class DetailScreen extends StatefulWidget {
   final Poker poker;
 
-  DetailScreen(this.poker);
+  DetailScreen({this.poker});
 
   @override
   State<StatefulWidget> createState() {

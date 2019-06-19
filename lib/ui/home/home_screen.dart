@@ -19,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         body: widget.tabs[_index],
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.white,
           currentIndex: _index,
           onTap: (index) => setState(() {
                 _index = index;

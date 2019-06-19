@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class ListScreen extends StatefulWidget {
   final Repo repo;
 
-  ListScreen({Key key, this.repo}) : super(key: key);
+  ListScreen({this.repo}) : super(key: new Key(repo.toString()));
 
   @override
   _ListScreenState createState() => _ListScreenState(repo);
@@ -18,12 +18,6 @@ class _ListScreenState extends State<ListScreen> {
 
   _ListScreenState(Repo repo) {
     _cards = repo.values();
-  }
-
-  @override
-  void didUpdateWidget(ListScreen oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    _cards = widget.repo.values();
   }
 
   @override
@@ -41,9 +35,12 @@ class _ListScreenState extends State<ListScreen> {
                 children: List<Widget>.generate(widget.repo.grid().row, (column) {
                   return Flexible(
                     fit: FlexFit.tight,
-                    child: PokerCard.given(getCard(row, column), () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(getCard(row, column))));
-                    }),
+                    child: PokerCard(
+                      poker: _getCard(row, column),
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(poker: _getCard(row, column))));
+                      },
+                    ),
                   );
                 }),
               ),
@@ -54,7 +51,7 @@ class _ListScreenState extends State<ListScreen> {
     );
   }
 
-  Poker getCard(int row, int column) {
+  Poker _getCard(int row, int column) {
     return _cards[(row * 2) + column];
   }
 }
