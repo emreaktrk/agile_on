@@ -32,6 +32,10 @@ class _HomeScreenState extends State<HomeScreen> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.credit_card),
+              title: Text("Fibonacci"),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.credit_card),
               title: Text("ACM"),
             ),
             BottomNavigationBarItem(

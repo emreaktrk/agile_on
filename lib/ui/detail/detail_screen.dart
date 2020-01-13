@@ -10,11 +10,11 @@ class DetailScreen extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return DetailState();
+    return _DetailState();
   }
 }
 
-class DetailState extends State<DetailScreen> {
+class _DetailState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -29,6 +29,7 @@ class PokerApp extends StatelessWidget {
         home: SafeArea(
           child: HomeScreen(
             tabs: <Widget>[
+              ListScreen(repo: Factory.create(FactoryType.FIBONACCI)),
               ListScreen(repo: Factory.create(FactoryType.ACM)),
               ListScreen(repo: Factory.create(FactoryType.SEQUENTIAL)),
               ListScreen(repo: Factory.create(FactoryType.SIZE)),
